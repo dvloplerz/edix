@@ -1,0 +1,13 @@
+[package]
+name = "differ"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+polars = { version = "0.53.0", features = ["lazy", "temporal"] }
+calamine = "0.26.0"
+iced = "0.14.0"
+native-dialog = "0.5"
+thiserror = "2.0.18"
+tokio = "1.52.3"
+iced_widget = "0.14.2"
