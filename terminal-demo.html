@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edix - Excel Reconciliation Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #1a1b26;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            padding: 2rem;
+        }
+        .terminal {
+            background: #16161e;
+            border: 1px solid #2d2e44;
+            border-radius: 12px;
+            box-shadow: 
+                0 0 0 1px rgba(255,255,255,0.05),
+                0 20px 40px rgba(0,0,0,0.5),
+                inset 0 1px 0 rgba(255,255,255,0.03);
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+        }
+        .terminal-header {
+            background: #1f1f2e;
+            border-bottom: 1px solid #2d2e44;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .traffic-light {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .traffic-light.red { background: #ff5f56; }
+        .traffic-light.yellow { background: #ffbd2e; }
+        .traffic-light.green { background: #27c93f; }
+        .terminal-title {
+            color: #565f89;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-left: 0.5rem;
+            flex: 1;
+            text-align: center;
+        }
+        .terminal-body {
+            padding: 1.5rem;
+            line-height: 1.7;
+            color: #c0caf5;
+            font-size: 14px;
+        }
+        .line { color: #565f89; }
+        .title { color: #7aa2f7; font-weight: 600; }
+        .label { color: #9ece6a; }
+        .value { color: #c0caf5; }
+        .error { color: #f7768e; font-weight: 500; }
+        .success { color: #9ece6a; font-weight: 500; }
+        .divider { color: #565f89; }
+        .mismatch-row { color: #f7768e; }
+        .prompt { color: #e0af68; }
+        .command { color: #7dcfff; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="traffic-light red"></div>
+            <div class="traffic-light yellow"></div>
+            <div class="traffic-light green"></div>
+            <span class="terminal-title">edix - Excel Reconciliation Demo</span>
+        </div>
+        <div class="terminal-body">
+            <div class="line">──────────────────────────────────────────────────</div>
+            <div class="title">edix - excel reconciliation tool</div>
+            <div class="line">──────────────────────────────────────────────────</div>
+            <div><span class="label">source sheet:</span> <span class="value">Bank</span></div>
+            <div><span class="label">compare with:</span> <span class="value">GL</span></div>
+            <div><span class="label">column index:</span> <span class="value">0 (transaction_id)</span></div>
+            <div class="line">──────────────────────────────────────────────────</div>
+            <div class="error">✗ found 2 mismatch(es):</div>
+            <div><span class="value">{:<10} | {}</span> <span class="divider">row        | value</span></div>
+            <div class="line">──────────────────────────────────────────────────</div>
+            <div class="mismatch-row">4          | T003</div>
+            <div class="mismatch-row">8          | T007</div>
+            <div class="line">──────────────────────────────────────────────────</div>
+            <div class="success">✓ exported 2 mismatches to mismatches.csv</div>
+            <div class="line">──────────────────────────────────────────────────</div>
+        </div>
+    </div>
+</body>
+</html>

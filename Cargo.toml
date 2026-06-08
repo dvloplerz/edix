@@ -1,13 +1,48 @@
 [package]
-name = "differ"
-version = "0.1.0"
+name = "edix"
+version = "0.4.0"
 edition = "2024"
+description = "excel/csv data comparison & reconciliation tool -- built for accounting & audit workflows"
+authors = ["ittipat.t <your.email@example.com>"]
+license = "MIT"
+repository = "https://github.com/dvloplerz/edix"
+
+[[bin]]
+name = "edix"
+path = "src/main.rs"
 
 [dependencies]
-polars = { version = "0.53.0", features = ["lazy", "temporal"] }
-calamine = "0.26.0"
-iced = "0.14.0"
-native-dialog = "0.5"
+# Core
+clap = { version = "4.5", features = ["derive", "env"] }
 thiserror = "2.0.18"
-tokio = "1.52.3"
-iced_widget = "0.14.2"
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Excel / CSV
+calamine = { version = "0.26.0", features = ["dates"] }
+csv = "1.3"
+
+# Excel OUTPUT (for highlighted results)
+xlsxwriter = "0.6"
+
+# Date/time for type coercion
+chrono = "0.4"
+
+# Fuzzy matching
+strsim = "0.11"
+
+# Progress bars for large files
+indicatif = "0.18"
+
+# Styled terminal output
+owo-colors = "4.1"
+
+# Config files
+toml = "0.8"
+
+# Path matching
+glob = "0.3"
+
+[dev-dependencies]
+tempfile = "3.8"

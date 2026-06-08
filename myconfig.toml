@@ -1,0 +1,25 @@
+name = "edix-comparison"
+compares = []
+type_coercion = []
+
+[source]
+path = "data.xlsx"
+header_row = 1
+
+[output]
+format = "Csv"
+path = "edix_output"
+include_summary = true
+highlight_mismatches = true
+max_rows_per_file = 500000
+
+[matching]
+key_columns = ["id"]
+compare_columns = []
+match_type = "Exact"
+case_sensitive = false
+
+[fuzzy]
+enabled = false
+threshold = 0.85
+columns = []

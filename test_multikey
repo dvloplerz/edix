@@ -1,0 +1,3 @@
+source_sheet,compare_sheet,key_columns,compare_columns,row_number,key_value,field,source_value,compare_value,mismatch_type,similarity
+Bank,GL,transaction_id|amount,date|description|status,8,t007|1200,-,present in source,MISSING,MissingInCompare,
+Bank,GL,transaction_id|amount,date|description|status,4,t003|899,-,present in source,MISSING,MissingInCompare,
